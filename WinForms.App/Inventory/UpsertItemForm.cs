@@ -27,7 +27,7 @@ namespace WinForms.App
                 return;
             }
 
-            Service.State.Items.Add(new Service.Item
+            Service.InventoryManager.Items.Add(new Service.Item
             {
                 Name = textBox1.Text,
                 Code = textBox2.Text,

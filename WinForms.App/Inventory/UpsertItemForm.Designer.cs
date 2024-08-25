@@ -161,6 +161,7 @@ namespace WinForms.App
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "UpsertItemForm";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Form2";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

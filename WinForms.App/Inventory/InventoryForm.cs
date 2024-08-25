@@ -44,9 +44,9 @@ namespace WinForms.App
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Check for valid row index
-            if (e.RowIndex >= 0 && e.RowIndex < Service.State.Items.Count)
+            if (e.RowIndex >= 0 && e.RowIndex < Service.InventoryManager.Items.Count)
             {
-                var selectedItem = Service.State.Items.ToArray()[e.RowIndex];
+                var selectedItem = Service.InventoryManager.Items.ToArray()[e.RowIndex];
                 // ... (your logic to handle the selected item)
             }
             else
@@ -59,7 +59,7 @@ namespace WinForms.App
         private void ResetDataGridView()
         {
             this.dataGridView1.DataSource = null;
-            this.dataGridView1.DataSource = Service.State.Items;
+            this.dataGridView1.DataSource = Service.InventoryManager.Items;
             this.dataGridView1.ClearSelection();
             this.dataGridView1.Refresh();
         }

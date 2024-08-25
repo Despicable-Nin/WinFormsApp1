@@ -1,8 +1,8 @@
 ﻿namespace WinForms.Service
 {
-    public static class State
+    public static class InventoryManager
     {
-        static ICollection<Item> _items;
+        static ICollection<Item>? _items;
 
         public static ICollection<Item> Items
         {
