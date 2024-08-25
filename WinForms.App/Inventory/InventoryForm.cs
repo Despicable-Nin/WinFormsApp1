@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinForms.Service;
 
 namespace WinForms.App
 {
@@ -28,6 +29,10 @@ namespace WinForms.App
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            var items = Service.InventoryManager.Items;
+            var filteredList = items.Where(i => i.Name.Contains(txtSearch.Text, StringComparison.OrdinalIgnoreCase) || i.Code.Equals(txtSearch.Text, StringComparison.OrdinalIgnoreCase)).ToArray();
+
+            ResetDataGridView(filteredList);
 
         }
 
@@ -56,10 +61,14 @@ namespace WinForms.App
             }
         }
 
-        private void ResetDataGridView()
+        private void ResetDataGridView(IEnumerable<Item>? items = null)
         {
+            if(items == null)
+            {
+                items = Service.InventoryManager.Items;
+            }
             this.dataGridView1.DataSource = null;
-            this.dataGridView1.DataSource = Service.InventoryManager.Items;
+            this.dataGridView1.DataSource = items;
             this.dataGridView1.ClearSelection();
             this.dataGridView1.Refresh();
         }

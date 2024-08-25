@@ -31,7 +31,7 @@
             dataGridView1 = new DataGridView();
             button1 = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtSearch = new TextBox();
             button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -70,13 +70,13 @@
             label1.TabIndex = 4;
             label1.Text = "Search";
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(12, 59);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(592, 29);
-            textBox1.TabIndex = 5;
+            txtSearch.Font = new Font("Segoe UI", 12F);
+            txtSearch.Location = new Point(12, 59);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(592, 29);
+            txtSearch.TabIndex = 5;
             // 
             // button2
             // 
@@ -95,7 +95,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(673, 520);
             Controls.Add(button2);
-            Controls.Add(textBox1);
+            Controls.Add(txtSearch);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
@@ -114,7 +114,7 @@
         private DataGridView dataGridView1;
         private Button button1;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtSearch;
         private Button button2;
     }
 }
